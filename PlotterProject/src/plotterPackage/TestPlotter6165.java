@@ -1,5 +1,5 @@
 /**
- *
+ * superseded by plotterPackage.PlotterTest
  */
 package plotterPackage;
 
@@ -84,30 +84,6 @@ class TestPlotter6165 {
 		System.out.println(Methods.endMessage(t0));
 	}
 
-	/**
-	 * Test method for
-	 * {@link plotterPackage.Plotter6165#setMainPlotPath(java.awt.Shape)}.
-	 */
-	@Test
-	final void testSetMainPlotPath() {
-//		Assertions.fail("Not yet implemented"); // TODO
-		final long t0 = System.currentTimeMillis();
-		System.out.println(Methods.startMessage(t0));
-
-		final Path2D.Double plotpath = new Path2D.Double();
-		double x = -1;
-		double y = x * x;
-		plotpath.moveTo(x, y);
-		final double dx = 0.01;
-		for (x = x + dx; x < 1.00001; x += dx) {
-			y = x * x;
-			plotpath.lineTo(x, y);
-		}
-		TestPlotter6165.plotter.setMainPlotPath(plotpath);
-
-		System.out.println(Methods.endMessage(t0));
-	}
-																																																																																						
 	/**
 	 * Test method for
 	 * {@link plotterPackage.Plotter6165#addLegend(java.lang.String, double, double, double, double)}.
@@ -432,6 +408,30 @@ class TestPlotter6165 {
 	@Test
 	final void testSetLeft() {
 		Assertions.fail("Not yet implemented"); // TODO
+	}
+
+	/**
+	 * Test method for
+	 * {@link plotterPackage.Plotter6165#setMainPlotPath(java.awt.Shape)}.
+	 */
+	@Test
+	final void testSetMainPlotPath() {
+//		Assertions.fail("Not yet implemented"); // TODO
+		final long t0 = System.currentTimeMillis();
+		System.out.println(Methods.startMessage(t0));
+
+		final Path2D.Double plotpath = new Path2D.Double();
+		double x = -1;
+		double y = x * x;
+		plotpath.moveTo(x, y);
+		final double dx = 0.01;
+		for (x = x + dx; x < 1.00001; x += dx) {
+			y = x * x;
+			plotpath.lineTo(x, y);
+		}
+		TestPlotter6165.plotter.setMainPlotPath(plotpath);
+
+		System.out.println(Methods.endMessage(t0));
 	}
 
 	/**

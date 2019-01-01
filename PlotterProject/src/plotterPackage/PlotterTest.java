@@ -221,6 +221,26 @@ public class PlotterTest implements Runnable {
 		}
 	}
 
+	private static void testSetPlotTitle(final long t0, final List<String> failureList, final List<String> passList,
+			final Plotter6165 plotter) {
+		plotter.setPlotTitle("Plot Title");
+		plotter.repaint();
+
+		final int sizeChange = JOptionPane.showConfirmDialog(null, "Did the plot title appear?");
+		switch (sizeChange) {
+		case JOptionPane.YES_OPTION:
+			passList.add("Plot title appeared.");
+			break;
+		case JOptionPane.NO_OPTION:
+			failureList.add("Plot title did not appear");
+			break;
+		case JOptionPane.CANCEL_OPTION:
+			System.out.println("cancel");
+			System.out.println(Methods.endMessage(t0));
+			return;
+		}
+	}
+
 	private static void testSetPlotWindowDimension(final long t0, final List<String> failureList,
 			final List<String> passList, final Plotter6165 plotter) {
 		plotter.setPlotWindowDimension(new Dimension(600, 500));
@@ -264,6 +284,7 @@ public class PlotterTest implements Runnable {
 		PlotterTest.testAddTextBox(t0, failureList, passList, plotter);
 		PlotterTest.testAddPlotPath(t0, failureList, passList, plotter);
 		PlotterTest.testAddText(t0, failureList, passList, plotter);
+		PlotterTest.testSetPlotTitle(t0, failureList, passList, plotter);
 
 		final int failureCount = failureList.size();
 		System.out.println(String.format("%,d %s:", failureCount, failureCount == 1 ? "failure" : "failures"));

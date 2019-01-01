@@ -1,7 +1,3 @@
-/**
- * superseded by plotterPackage.PlotterTest
- */
-
 package plotterPackage;
 
 import java.awt.BasicStroke;
